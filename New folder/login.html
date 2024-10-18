@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-image: url(https://img.freepik.com/free-photo/nature-product-backdrop-farm-sunlight_53876-143219.jpg?w=740&t=st=1726807094~exp=1726807694~hmac=41cebc38ee54306b333e08ef469c1e8f03cdaa23d587ca3f0cccaf004d63aac5);
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.login-form {
+			width: 500px;
+			background-color: #fff;
+			padding: 30px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.login-form h2 {
+			text-align: center;
+			margin-top: 0;
+		}
+		.login-form input[type="text"], .login-form input[type="password"] {
+			width: 90%;
+			padding: 15px;
+			margin: 10px -10;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.login-form input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 15px 30px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.login-form input[type="submit"]:hover {
+			background-color: #3e8e41;
+
+		}
+        
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="login-form">
+			<h2>Login</h2>
+			<form onsubmit="return redirect()"> <!-- add the onsubmit attribute here -->
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username"><br><br>
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password"><br><br>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+	</div>
+
+	<script>
+		function redirect() {
+			window.location.href = "welcome.html"; // redirect to welcome.html
+			return false;
+		}
+	</script>
+</body>
+</html>

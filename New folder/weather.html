@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    .weather-report {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .current-weather {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .current-weather h2 {
+        margin-top: 0;
+    }
+    
+    .current-weather p {
+        margin-bottom: 10px;
+    }
+    
+    .current-weather img {
+        width: 500px;
+        height: 500px;
+        margin: 10px;
+    }
+    
+    .forecast {
+        margin-top: 20px;
+    }
+    
+    .forecast h2 {
+        margin-top: 0;
+    }
+    
+    .forecast ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .forecast li {
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .forecast li p {
+        margin-bottom: 10px;
+    }
+    
+    .forecast li img {
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+    }</style>
+</head>
+<body>
+	<div class="weather-report">
+		<h1>Weather Report</h1>
+		<div class="current-weather">
+		  		<h2>Ramdas Pally, Telangana</h2>
+			<h3>Current Weather</h3><i class="fa-solid fa-cloud-sun"></i>
+	
+			<p>Temperature: <span id="temperature">26°C</span></p>
+			<p>Humidity: <span id="humidity">60%</span></p>
+			<p>Wind Speed: <span id="wind-speed">15 km/h</span></p>
+			</i>
+		</div>
+		<div class="forecast">
+			<h2>5-Day Forecast</h2>
+			<ul>
+				<li>
+					<p>Monday</p>
+					<p>Partly Cloudy</p>
+					<i class="fa-solid fa-cloud-sun"></i>
+                    
+				</li>
+				<li>
+					<p>Tuesday</p>
+					<p>Sunny</p>
+					<i class="fa-solid fa-sun"></i>
+				</li>
+				<li>
+					<p>Wednesday</p>
+					<p>Rainy</p>
+					<i class="fa-solid fa-cloud-rain"></i>
+                    
+				</li>
+				<li>
+					<p>Thursday</p>
+					<p>Cloudy</p>
+					<i class="fa-solid fa-cloud"></i>
+				</li>
+				<li>
+					<p>Friday</p>
+					<p>Sunny</p>
+                    <i class="fa-solid fa-sun"></i>
+					
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

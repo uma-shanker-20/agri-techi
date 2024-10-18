@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crop Details Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        select {
+            height: 40px;
+            cursor: pointer;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Crop Details</h1>
+        <form id="cropForm">
+            <div class="form-group">
+                <label for="cropName">Crop Name:</label>
+                <input type="text" id="cropName" name="cropName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="soilType">Soil Type:</label>
+                <input type="text" id="soilType" name="soilType" required>
+            </div>
+
+            <div class="form-group">
+                <label for="climate">Climate:</label>
+                <input type="text" id="climate" name="climate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="waterNeeds">Water Needs (in mm):</label>
+                <input type="number" id="waterNeeds" name="waterNeeds" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fertilizerType">Fertilizer Type:</label>
+                <input type="text" id="fertilizerType" name="fertilizerType" required>
+            </div>
+
+            <div class="form-group">
+                <label for="season">Season:</label>
+                <select id="season" name="season" required>
+                    <option value="" disabled selected>Select a season</option>
+                    <option value="Kharif">Kharif</option>
+                    <option value="Rabi">Rabi</option>
+                    <option value="Zaid">Zaid</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Budget (in INR):</label>
+                <input type="number" id="budget" name="budget" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit Details</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('cropForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            window.location.href = 'crop submit.html'; 
+        });
+    </script>
+</body>
+</html>
