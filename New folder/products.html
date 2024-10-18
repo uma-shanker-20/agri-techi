@@ -492,17 +492,16 @@
    </div>
   </div>
   <script>
-    // JavaScript code here
+    
     const searchButton = document.querySelector('.search-bar button');
     const searchBarInput = document.querySelector('.search-bar input[type="text"]');
     const filterGroups = document.querySelectorAll('.filter-group');
     const priceFilterInputs = document.querySelectorAll('.price-filter input');
     const priceFilterButton = document.querySelector('.price-filter button');
  
-    // Add event listeners
     searchButton.addEventListener('click', () => {
      console.log('Search button clicked!');
-     // TO DO: implement search functionality
+
     });
  
     filterGroups.forEach((filterGroup) => {
@@ -514,13 +513,13 @@
  
     priceFilterButton.addEventListener('click', () => {
      console.log('Price filter button clicked!');
-     // TO DO: implement price filter functionality
+
     });
  
     priceFilterInputs.forEach((input) => {
      input.addEventListener('input', () => {
       console.log('Price filter input changed!');
-      // TO DO: implement price filter logic
+  
      });
     });
    </script>
