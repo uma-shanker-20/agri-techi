@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cows and Buffaloes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+      }
+
+      nav {
+        background-color: #333;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 1em;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        display: block;
+      }
+
+      nav ul li a:hover {
+        background-color: #575757;
+      }
+
+      main {
+        padding: 2em;
+      }
+
+      section {
+        margin-bottom: 2em;
+      }
+
+      section img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1em;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
+      .cow {
+        height: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Information about Cows and Buffaloes</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#cows">Cows</a></li>
+        <li><a href="#buffalo">Buffalo</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="cows">
+        <h2>Cows</h2>
+        <p>
+          Cows are domesticated bovine animals that are raised for their milk,
+          meat, and hides. They are an important part of agriculture and are
+          found all over the world.
+        </p>
+        <a href="images/clg.jpg"
+          ><img class="cow" src="images/cow.png" alt="Cow"
+        /></a>
+        <table>
+          <tr>
+            <th>Attribute</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Price in Market</td>
+            <td>50000 - 150000</td>
+          </tr>
+          <tr>
+            <td>Diet</td>
+            <td>Grass, Fruits, grains</td>
+          </tr>
+          <tr>
+            <td>Daily Food Intake</td>
+            <td>25 - 50 kg</td>
+          </tr>
+          <tr>
+            <td>Breeding</td>
+            <td>Once a year</td>
+          </tr>
+          <tr>
+            <td>Pregnancy Period</td>
+            <td>9 months</td>
+          </tr>
+          <tr>
+            <td>Milk Production</td>
+            <td>20 - 30 liters per day</td>
+          </tr>
+        </table>
+      </section>
+      <section id="buffaloes">
+        <h2>Buffalo</h2>
+        <p>
+          Buffalo are large bovine animals that are often used for their milk
+          and meat. They are known for their strength and are commonly found in
+          Asia and Africa.
+        </p>
+        <img class="cow" src="images/cow.png" alt="Cow" />
+        <table>
+          <tr>
+            <th>Attribute</th>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Price in Market</td>
+            <td>50000 - 200000</td>
+          </tr>
+          <tr>
+            <td>Diet</td>
+            <td>Grass, Weeds, grains</td>
+          </tr>
+          <tr>
+            <td>Daily Food Intake</td>
+            <td>30 - 60 kg</td>
+          </tr>
+          <tr>
+            <td>Breeding</td>
+            <td>Once every two years</td>
+          </tr>
+          <tr>
+            <td>Pregnancy Period</td>
+            <td>10 months</td>
+          </tr>
+          <tr>
+            <td>Milk Production</td>
+            <td>10 - 20 liters per day</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <!--      maybe later -->
+    </footer>
+  </body>
+</html>

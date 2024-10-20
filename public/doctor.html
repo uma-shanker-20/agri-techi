@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Doctor's Appointment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* background-image:url(images/cow\ background.jpg) no-repeat center cover; */
+            background: linear-gradient(90deg, rgb(128, 230, 206) 0%, rgb(72, 92, 72) 50%, rgba(74, 150, 147, 1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background:rgb(0, 0, 0,0.1) ;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #433cc1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #08c966;
+        }
+       
+       
+     
+    </style>
+</head>
+<body>
+     
+    <div class="container">
+        <h1>Book a Doctor's Appointment</h1>
+        <form action="#" method="POST">
+            <label for="doctor">Select Doctor</label>
+            <select id="doctor" name="doctor" required>
+                <option value="" disabled selected>Select Your Doctor</option>
+                <option value="dr_smith">Cattel</option>
+                <option value="dr_jones">Crop</option>
+                <option value="dr_brown">Aqua</option>
+            </select>
+            <label for="date">Select Date</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Select Time</label>
+            <input type="time" id="time" name="time" required>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    
+</body>
+</html>

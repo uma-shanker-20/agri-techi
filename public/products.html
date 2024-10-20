@@ -1,0 +1,437 @@
+<html>
+  <head>
+    <title>products</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .header {
+        background-color: #ffffff;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .header img {
+        height: 30px;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #f5f5f5;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      .search-bar input {
+        border: none;
+        outline: none;
+        padding: 5px;
+        background-color: #f5f5f5;
+      }
+      .search-bar button {
+        background-color: #ffffff;
+        border: none;
+        cursor: pointer;
+      }
+      .search-bar button i {
+        color: #333;
+      }
+      .header .actions {
+        display: flex;
+        align-items: center;
+      }
+      .header .actions a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+      .header .actions a.sell {
+        background-color: #ffce32;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .container {
+        display: flex;
+        padding: 20px;
+      }
+      .sidebar {
+        width: 20%;
+        background-color: #ffffff;
+        padding: 20px;
+        border-right: 1px solid #e0e0e0;
+      }
+      .sidebar h3 {
+        margin-top: 0;
+      }
+      .sidebar .filter-group {
+        margin-bottom: 20px;
+      }
+      .sidebar .filter-group h4 {
+        margin: 0;
+        cursor: pointer;
+      }
+      .sidebar .filter-group .filter-content {
+        display: none;
+        margin-top: 10px;
+      }
+      .sidebar .filter-group .filter-content input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .sidebar .filter-group .filter-content button {
+        width: 100%;
+        padding: 5px;
+        background-color: #e0e0e0;
+        border: none;
+        cursor: pointer;
+      }
+      .main-content {
+        width: 80%;
+        padding: 20px;
+      }
+      .main-content .results-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .main-content .results-header h2 {
+        margin: 0;
+      }
+      .main-content .results-header .sort-by {
+        display: flex;
+        align-items: center;
+      }
+      .main-content .results-header .sort-by select {
+        padding: 5px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+      }
+      .main-content .results {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .main-content .results .card {
+        width: 30%;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+      }
+      .main-content .results .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .main-content .results .card .card-body {
+        padding: 10px;
+      }
+      .main-content .results .card .card-body h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+      .main-content .results .card .card-body p {
+        margin: 5px 0;
+        color: #666;
+      }
+      .main-content .results .card .card-body .price {
+        font-size: 20px;
+        color: #333;
+        font-weight: bold;
+      }
+      .main-content .results .card .card-body .location {
+        font-size: 14px;
+        color: #999;
+      }
+      .main-content .results .card .card-body .date {
+        font-size: 12px;
+        color: #999;
+      }
+      .main-content .results .card .featured {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #ffce32;
+        padding: 5px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #333;
+      }
+      .main-content .results .card .favorite {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #ffffff;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .main-content .results .card .favorite i {
+        color: #333;
+      }
+      .main-content .ad-banner {
+        background-color: #0056b3;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .price-filter {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .price-filter input {
+        width: 100px;
+        padding: 5px;
+        margin: 0 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+      }
+      .price-filter button {
+        padding: 5px 10px;
+        background-color: #e0e0e0;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img alt="Logo" src="images/logo.png" />
+      <div class="search-bar">
+        <input placeholder="pesiside" type="text" />
+        <input placeholder="Fertilizer" type="text" />
+        <button>
+          <i class="fas fa-search"> </i>
+        </button>
+      </div>
+      <div class="actions">
+        <a href="#"> ENGLISH </a>
+        <a class="sell" href="#"> + SELL </a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sidebar">
+        <h3>Popular near you</h3>
+        <div class="filter-group">
+          <h4>CATEGORIES</h4>
+          <div class="filter-content">
+            <p>All Categories</p>
+          </div>
+        </div>
+        <div class="filter-group">
+          <h4>LOCATIONS</h4>
+          <div class="filter-content">
+            <!-- Locations filter content -->
+          </div>
+        </div>
+        <div class="filter-group">
+          <h4>BUDGET</h4>
+          <div class="filter-content">
+            <p>Choose a range below</p>
+            <input placeholder="min" type="text" />
+            <input placeholder="max" type="text" />
+            <button>Apply</button>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="results-header">
+          <h2>FOR YOUR CROPS</h2>
+          <div class="sort-by">
+            <label for="sort"> SORT BY: </label>
+            <select id="sort">
+              <option value="date">Date Published</option>
+              <option value="Price">Price</option>
+              <option value="Price">Rating</option>
+              <option value="Price">na istam</option>
+            </select>
+          </div>
+        </div>
+        <!-- <div class="price-filter">
+     <label for="min-price">
+      Min Price:
+     </label>
+     <input id="min-price" placeholder="min" type="text"/>
+     <label for="max-price">
+      Max Price:
+     </label>
+     <input id="max-price" placeholder="max" type="text"/>
+     <button>
+      Apply
+     </button>
+    </div> -->
+        <div class="results">
+          <div class="card">
+            <img alt="Komato harvester" src="images/komato.webp" />
+            <div class="card-body">
+              <div class="featured">FEATURED</div>
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 13,50,000</h3>
+              <p>Komato harvester</p>
+              <p class="location">ATTUR, SALEM</p>
+              <p class="date">5 DAYS AGO</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              alt="1nos Swaraj 744xt, Blue colour"
+              src="images/swaraj.webp"
+            />
+            <div class="card-body">
+              <div class="featured">FEATURED</div>
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 9,50,000</h3>
+              <p>Swaraj 744xt, Blue colour</p>
+              <p class="location">ASHINAGAR, DURGAPUR</p>
+              <p class="date">SEP 09</p>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="Sonlika Sikander 42 HP" src="images/sonalika.jpeg" />
+            <div class="card-body">
+              <div class="featured">FEATURED</div>
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 5,65,000</h3>
+              <p>Sonlika Sikander 42 HP</p>
+              <p class="location">CHIKKABALLAPUR, CHINTAMANI</p>
+              <p class="date">SEP 28</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              alt="Mahindra 265 DI &amp; new Trolley"
+              src="images/mahindra.jpeg"
+            />
+            <div class="card-body">
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 4,80,000</h3>
+              <p>Mahindra 265 DI &amp; new Trolley</p>
+              <p class="location">SOJAT ROAD, RAJASTHAN</p>
+              <p class="date">TODAY</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              alt="APOLLO 1501 DI NANO Mini Tractor"
+              src="images/apollo.webp"
+            />
+            <div class="card-body">
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 4,50,000</h3>
+              <p>APOLLO 1501 DI NANO Mini Tractor</p>
+              <p class="location">BHUPALPALLI, CHOPPADANDI</p>
+              <p class="date">TODAY</p>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="Tractor loder" src="images/dron.webp" />
+            <div class="card-body">
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 10,00,000</h3>
+              <p>
+                6 Axis Hexacopter 16L E616P Agriculture frame for Pesticide
+                spraying
+              </p>
+              <p class="location">BANIA, PINAHAT</p>
+              <p class="date">TODAY</p>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="15 HP Kubota Power Tiller" src="images/koboto.webp" />
+            <div class="card-body">
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 8,50,000</h3>
+              <p>15 HP Kubota Power Tiller</p>
+              <p class="location">vipper,Bhemavaram</p>
+              <p class="date">15 Days ago</p>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="Tractor" src="images/powerfull.webp" />
+            <div class="card-body">
+              <div class="favorite">
+                <i class="far fa-heart"> </i>
+              </div>
+              <h3>₹ 4,50,000</h3>
+              <p>7.5HP Petrol Power Weeder Tiller 4 Stroke</p>
+              <p class="location">ungutur,tadepelli</p>
+              <p class="date">1 month ago</p>
+            </div>
+          </div>
+        </div>
+        <div class="ad-banner">
+          <h3>Want to see your stuff here?</h3>
+          <p>
+            Make some extra cash by selling things in your community. Go on,
+            it's quick and easy.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const searchButton = document.querySelector(".search-bar button");
+      const searchBarInput = document.querySelector(
+        '.search-bar input[type="text"]'
+      );
+      const filterGroups = document.querySelectorAll(".filter-group");
+      const priceFilterInputs = document.querySelectorAll(
+        ".price-filter input"
+      );
+      const priceFilterButton = document.querySelector(".price-filter button");
+
+      searchButton.addEventListener("click", () => {
+        console.log("Search button clicked!");
+      });
+
+      filterGroups.forEach((filterGroup) => {
+        const filterContent = filterGroup.querySelector(".filter-content");
+        filterGroup.addEventListener("click", () => {
+          filterContent.style.display =
+            filterContent.style.display === "block" ? "none" : "block";
+        });
+      });
+
+      priceFilterButton.addEventListener("click", () => {
+        console.log("Price filter button clicked!");
+      });
+
+      priceFilterInputs.forEach((input) => {
+        input.addEventListener("input", () => {
+          console.log("Price filter input changed!");
+        });
+      });
+    </script>
+  </body>
+</html>

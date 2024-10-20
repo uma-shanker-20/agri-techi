@@ -1,0 +1,370 @@
+<html>
+  <head>
+    <title>Community</title>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> -->
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #f5f5f5;
+        color: #333333;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar .profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .sidebar .profile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .sidebar .profile span {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .sidebar .search {
+        margin-bottom: 20px;
+      }
+      .sidebar .search input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        color: #333333;
+      }
+      .sidebar .menu {
+        flex-grow: 1;
+      }
+      .sidebar .menu .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        background-color: #f9f9f9;
+      }
+      .sidebar .menu .menu-item.active {
+        background-color: #e0e0e0;
+      }
+      .sidebar .menu .menu-item img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .sidebar .menu .menu-item span {
+        flex-grow: 1;
+      }
+      .sidebar .menu .menu-item .status {
+        font-size: 12px;
+        color: #2ecc71;
+      }
+      .chat {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+      }
+      .chat-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+      }
+      .chat-header img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .chat-header span {
+        flex-grow: 1;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .chat-header .status {
+        font-size: 12px;
+        color: #2ecc71;
+      }
+      .chat-messages {
+        flex-grow: 1;
+        padding: 10px;
+        overflow-y: auto;
+      }
+      .chat-messages .message {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+      .chat-messages .message .message-content {
+        max-width: 60%;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #008080;
+        color: #ffffff;
+      }
+      .chat-messages .message .message-time {
+        font-size: 12px;
+        color: #999999;
+        margin-top: 5px;
+      }
+      .chat-messages .message .message-sender {
+        font-size: 12px;
+        font-weight: bold;
+        color: #ff6347;
+        margin-bottom: 5px;
+      }
+      .chat-messages .message.you .message-content {
+        align-self: flex-end;
+        background-color: #34495e;
+      }
+      .chat-messages .message.you .message-sender {
+        color: #1e90ff;
+      }
+      .chat-input {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border-top: 1px solid #ddd;
+      }
+      .chat-input input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #ffffff;
+        color: #333333;
+        margin-right: 10px;
+      }
+      .chat-input .icons {
+        display: flex;
+        align-items: center;
+      }
+      .chat-input .icons i {
+        font-size: 20px;
+        color: #333333;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="profile">
+          <img
+            alt="Profile Picture"
+            height="40"
+            src="images/prabhas dp.jpeg"
+            width="40"
+          />
+          <span> shiva </span>
+        </div>
+        <div class="search">
+          <input placeholder="Search here.." type="text" />
+        </div>
+        <div class="menu">
+          <div class="menu-item active" data-chat="indian-chat">
+            <img
+              alt="mahismathi"
+              height="30"
+              src="images/mahismathi.webp"
+              width="30"
+            />
+            <span> Mahishmati boys </span>
+            <span class="status"> Active </span>
+          </div>
+          <div class="menu-item" data-chat="anime-gang">
+            <img
+              alt="kuntala"
+              height="30"
+              src="images/kuntala.jpeg"
+              width="30"
+            />
+            <span> kuntala knights </span>
+            <span class="status"> Active </span>
+          </div>
+          <div class="menu-item" data-chat="mema-pur">
+            <img
+              alt="kalakeya"
+              height="30"
+              src="images/kalakeya.jpeg"
+              width="30"
+            />
+            <span> kalakeya army </span>
+            <span class="status"> Active </span>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="chat-header">
+          <img
+            alt="Indian Chat"
+            height="30"
+            id="chat-header-img"
+            src="images/mahismathi.webp"
+            width="30"
+          />
+          <span id="chat-header-title"> Mahishmati </span>
+          <span class="status"> Active </span>
+        </div>
+        <div class="chat-messages" id="indian-chat">
+          <div class="message">
+            <div class="message-sender">Bahubali</div>
+            <div class="message-content">
+              any of you know what to use for pink bollworm
+            </div>
+            <div class="message-time">4:08 PM</div>
+          </div>
+          <div class="message">
+            <div class="message-sender">Katapa</div>
+            <div class="message-content">use coragen insecticide</div>
+            <div class="message-time">4:08 PM</div>
+          </div>
+          <div class="message">
+            <div class="message-sender">Bahubali</div>
+            <div class="message-content">what is the dosage and price</div>
+            <div class="message-time">4:08 PM</div>
+          </div>
+          <div class="message">
+            <div class="message-sender">Katapa</div>
+            <div class="message-content">
+              60ml for acre is enough price around 800
+            </div>
+            <div class="message-time">4:09 PM</div>
+          </div>
+          <div class="message">
+            <div class="message-sender">Bahubali</div>
+            <div class="message-content">thankyou</div>
+            <div class="message-time">7:58 PM</div>
+          </div>
+          <div class="message you">
+            <div class="message-sender">You</div>
+            <div class="message-content">hi avantika</div>
+            <div class="message-time">11:03 AM</div>
+          </div>
+        </div>
+        <div class="chat-messages" id="anime-gang" style="display: none">
+          <div class="message">
+            <div class="message-sender">Kuntala gunta</div>
+            <div class="message-content">kana nidurinchara</div>
+            <div class="message-time">5:00 PM</div>
+          </div>
+          <div class="message">
+            <div class="message-sender">Kuntala guntadu</div>
+            <div class="message-content">😴😴😴😴</div>
+            <div class="message-time">5:05 PM</div>
+          </div>
+        </div>
+        <div class="chat-messages" id="mema-pur" style="display: none">
+          <div class="message">
+            <div class="message-sender">haslabuuu</div>
+            <div class="message-content">Ta beet-qruvool dunkra</div>
+            <div class="message-time">6:00 PM</div>
+          </div>
+          <div class="message">
+            <div class="message-sender">bastra</div>
+            <div class="message-content">Dambadamba jivla baahaa-na</div>
+            <div class="message-time">6:05 PM</div>
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <input
+            id="message-input"
+            placeholder="Your Messages..."
+            type="text"
+          />
+          <div class="icons">
+            <i class="fas fa-image"> </i>
+            <i class="fas fa-smile"> </i>
+            <i class="fas fa-paper-plane" id="send-button"> </i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".menu-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          document
+            .querySelectorAll(".menu-item")
+            .forEach((i) => i.classList.remove("active"));
+          this.classList.add("active");
+
+          document
+            .querySelectorAll(".chat-messages")
+            .forEach((chat) => (chat.style.display = "none"));
+          document.getElementById(
+            this.getAttribute("data-chat")
+          ).style.display = "block";
+
+          document.getElementById("chat-header-title").textContent =
+            this.querySelector("span").textContent;
+          document.getElementById("chat-header-img").src =
+            this.querySelector("img").src;
+        });
+      });
+
+      document
+        .getElementById("send-button")
+        .addEventListener("click", function () {
+          var messageInput = document.getElementById("message-input");
+          var messageText = messageInput.value.trim();
+          if (messageText !== "") {
+            var messageContainer = document.createElement("div");
+            messageContainer.classList.add("message", "you");
+
+            var messageSender = document.createElement("div");
+            messageSender.classList.add("message-sender");
+            messageSender.textContent = "You";
+
+            var messageContent = document.createElement("div");
+            messageContent.classList.add("message-content");
+            messageContent.textContent = messageText;
+
+            var messageTime = document.createElement("div");
+            messageTime.classList.add("message-time");
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var ampm = hours >= 12 ? "PM" : "AM";
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            var timeString = hours + ":" + minutes + " " + ampm;
+            messageTime.textContent = timeString;
+
+            messageContainer.appendChild(messageSender);
+            messageContainer.appendChild(messageContent);
+            messageContainer.appendChild(messageTime);
+
+            var activeChat = document.querySelector(
+              '.chat-messages:not([style*="display: none"])'
+            );
+            activeChat.appendChild(messageContainer);
+            messageInput.value = "";
+            messageInput.focus();
+            activeChat.scrollTop = activeChat.scrollHeight;
+          }
+        });
+    </script>
+  </body>
+</html>

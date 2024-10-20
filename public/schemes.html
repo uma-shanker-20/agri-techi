@@ -1,0 +1,322 @@
+<html>
+<head>
+    <title>schemes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding-right: 20px;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .sidebar select, .sidebar button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .sidebar .filter-group {
+            margin-bottom: 20px;
+        }
+        .sidebar .filter-group h4 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .sidebar .filter-group a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+        .content {
+            flex: 1;
+        }
+        .content .search-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .content .search-bar input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .content .search-bar button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-left: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .content .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .content .tabs button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+            cursor: pointer;
+        }
+        .content .tabs button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .content .results {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .content .results span {
+            font-weight: 500;
+        }
+        .content .sort {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .content .sort select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .content .scheme {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .content .scheme h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .content .scheme p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .content .scheme .tags {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content .scheme .tags span {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- <a href="#">&#60; Back</a> -->
+            <h3>Filter By</h3>
+            <div class="filter-group">
+                <h4>State</h4>
+                <select>
+                    <option>Select</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+
+                </select>
+            </div>
+            <div class="filter-group">
+                <h4>Gender</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Age</h4>
+                <select>
+                    <option>Select</option>
+                    <option value="">1-10</option>
+                    <option value="">10-20</option>
+                    <option value="">20-30</option>
+                    <option value="">30-40</option>
+                    <option value="">40-50</option>
+                    <option value="">50-60</option>
+                    <option value="">60-70</option>
+                    <option value="">> 70</option>
+                    
+                </select>
+            </div>
+            <div class="filter-group">
+                <h4>Caste</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Ministry Name</h4>
+                <select>
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <h4>Residence</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Minority</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Differently Abled</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Benefit Type</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>DBT Scheme</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Disability Percentage</h4>
+                <select>
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <h4>Below Poverty Line</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Government Employee</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Employment Status</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Student</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Occupation</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Application Mode</h4>
+                <a href="#">+</a>
+            </div>
+            <div class="filter-group">
+                <h4>Scheme Type</h4>
+                <a href="#">+</a>
+            </div>
+            <button>Reset Filters</button>
+        </div>
+        <div class="content">
+            <div class="search-bar">
+                <input type="text" placeholder='For an exact match, put the words in quotes. For example: "Scheme Name".'>
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="tabs">
+                <button class="active">All Schemes</button>
+                <button>State Schemes</button>
+                <button>Central Schemes</button>
+            </div>
+            <div class="results">
+                We found <span>345</span> schemes based on your preferences
+            </div>
+            <div class="sort">
+                <select>
+                    <option>Sort : Relevance</option>
+                </select>
+            </div>
+            <div class="scheme">
+                <h3>Support for Value Addition - Support to R&G units</h3>
+                <p>Ministry Of Commerce And Industry</p>
+                <p>This scheme aims to enhance the quality of coffee products and achieve value addition through the introduction of improved technologies in roasting, grinding, and packaging which will result in boosting domestic coffee consumption and entrepreneurship in the coffee sector.</p>
+                <div class="tags">
+                    <span>Agriculture</span>
+                    <span>Direct Benefit Transfer</span>
+                    <span>Farmer</span>
+                    <span>Financial Assistance</span>
+                    <span>Subsidy</span>
+                </div>
+            </div>
+            <div class="scheme">
+                <h3>Atma Nirbhar Bagwani Yojana</h3>
+                <p>Arunachal Pradesh</p>
+                <p>The schemes are part of the Atma Nirbhar program announced during the Budget session held in February this year. A total amount of Rs 120 crores - Rs 60 crore for each scheme - has been allocated to the two concerned departments of Agriculture and Horticulture.</p>
+                <div class="tags">
+                    <span>Farmer</span>
+                    <span>Subsidy</span>
+                    <span>Umbrella Scheme</span>
+                </div>
+            </div>
+            <div class="scheme">
+                <h3>Natural Calamity Relief to Fishermen of State</h3>
+                <p>Goa</p>
+                <p>"Natural Calamity Relief to Fishermen of State" is a scheme by the Dept of Fisheries, Govt of Goa. Through this scheme, financial assistance is provided to the active fishermen who contribute to the Fishermen Corpus Relief Fund, whose fishing vessels are damaged or lost due to natural calamities.</p>
+                <div class="tags">
+                    <span>Critia</span>
+                    <span>Disaster</span>
+                    <span>Financial Assistance</span>
+                    <span>Fishermen</span>
+                    <span>Relief</span>
+                </div>
+            </div>
+            <div class="scheme">
+                <h3>Financial Assistance for the Purchase of Lifejackets and Lifebuoys for Fishermen</h3>
+                <p>Goa</p>
+                <p>"Financial Assistance for the Purchase of Lifejackets and Lifebuoys for Fishermen" is a scheme by the Dept of Fisheries, Govt of Goa. Through this scheme, financial assistance amounting to 75% is provided by the Government to eligible fishermen for the Purchase of Lifejackets and Lifebuoys.</p>
+                <div class="tags">
+                    <span>Financial Assistance</span>
+                    <span>Fish</span>
+                    <span>Fishermen</span>
+                    <span>Lifejackets</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
